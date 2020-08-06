@@ -17,7 +17,17 @@ const { Toolbar, DropdownMenu } = wp.components;
 registerBlockType("cgb/block-my-block", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __("CW my-block"), // Block title.
-	icon: "shield", // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+		>
+			<path d="M0 0h24v24H0z" fill="none" />
+			<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+		</svg>
+	), // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: "common", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [__("CW my-block"), __("CGB Example"), __("create-guten-block")],
 	attributes: {
@@ -52,9 +62,9 @@ registerBlockType("cgb/block-my-block", {
 					controls={[
 						[
 							{
-								icon: "wordpress",
+								icon: "editor-alignright",
 								title: __("JS TEST", "mytheme-blocks"),
-								onClick: () => alert(true),
+								onClick: () => onChangeAlignment("right"),
 								isActive: false,
 							},
 						],
@@ -120,6 +130,7 @@ registerBlockType("cgb/block-my-block", {
 					className={className}
 					onChange={onChangeContent}
 					value={content}
+					style={{ textAlign: alignment }}
 					placeholder="add your text here..."
 					// formattingControls={["bold", "italic"]}
 				/>
@@ -127,17 +138,6 @@ registerBlockType("cgb/block-my-block", {
 		);
 	},
 
-	/**
-	 * The save function defines the way in which the different attributes should be combined
-	 * into the final markup, which is then serialized by Gutenberg into post_content.
-	 *
-	 * The "save" property must be specified and must be a valid function.
-	 *
-	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-	 *
-	 * @param {Object} props Props.
-	 * @returns {Mixed} JSX Frontend HTML.
-	 */
 	save: ({ attributes }) => {
 		const { content, alignment } = attributes;
 
@@ -145,7 +145,8 @@ registerBlockType("cgb/block-my-block", {
 			<RichText.Content
 				tagName="p"
 				value={content}
-				className={`gutenberg-examples-align-${alignment}`}
+				style={{ textAlign: alignment }}
+				// className={`gutenberg-examples-align-${alignment}`}
 			/>
 		);
 	},
