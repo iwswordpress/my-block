@@ -13,10 +13,11 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { RichText, AlignmentToolbar, BlockControls } = wp.blockEditor;
 const { Toolbar, DropdownMenu } = wp.components;
+const { Fragment } = wp.element;
 
 registerBlockType("cgb/block-my-block", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __("CW my-block"), // Block title.
+	title: __("CRAIG - FIRST"), // Block title.
 	icon: (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +58,7 @@ registerBlockType("cgb/block-my-block", {
 			});
 		};
 		return (
-			<div>
+			<Fragment>
 				<BlockControls
 					controls={[
 						[
@@ -134,7 +135,7 @@ registerBlockType("cgb/block-my-block", {
 					placeholder="add your text here..."
 					// formattingControls={["bold", "italic"]}
 				/>
-			</div>
+			</Fragment>
 		);
 	},
 
