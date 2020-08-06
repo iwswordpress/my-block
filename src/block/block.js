@@ -14,6 +14,7 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
 const { RichText, AlignmentToolbar, BlockControls } = wp.blockEditor;
 const { Toolbar, DropdownMenu } = wp.components;
 const { Fragment } = wp.element;
+const { apiFetch } = wp.apiFetch;
 
 registerBlockType("cgb/block-my-block", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
@@ -41,22 +42,35 @@ registerBlockType("cgb/block-my-block", {
 			type: "string",
 			default: "none",
 		},
+		categories: {
+			type: "object",
+		},
 	},
 
 	edit: ({ className, attributes, setAttributes }) => {
 		// Creates a <p class='wp-block-cgb-block-my-block'></p>.
 		//console.log(attributes);
 		// const { content } = attributes;
+
 		const onChangeContent = (content) => {
 			setAttributes({ content });
 		};
-		const { content, alignment } = attributes;
+		const { content, alignment, categories } = attributes;
 
 		const onChangeAlignment = (newAlignment) => {
 			setAttributes({
 				alignment: newAlignment === undefined ? "none" : newAlignment,
 			});
 		};
+		// if (!categories) {
+		// 	wp.apiFetch({
+		// 		url: "http://localhost/firsttheme/wp-json/wp/v2/posts",
+		// 	}).then((categories) => {
+		// 		console.log(categories);
+		// 		console.log(categories[1].title.rendered);
+		// 	});
+		// }
+		// console.log("CATEGORIES: ", categories);
 		return (
 			<Fragment>
 				<BlockControls
