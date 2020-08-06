@@ -11,10 +11,6 @@ import "./style.scss";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { RichText, AlignmentToolbar, BlockControls } = wp.blockEditor;
-const { Toolbar, DropdownMenu } = wp.components;
-const { Fragment } = wp.element;
-const { apiFetch } = wp.apiFetch;
 
 registerBlockType("cgb/block-my-block2", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
@@ -64,7 +60,7 @@ registerBlockType("cgb/block-my-block2", {
 	},
 
 	save: ({ attributes }) => {
-		const { content, alignment, title } = attributes;
+		const { title } = attributes;
 
 		return <div>THE TITLE IS: {title}</div>;
 	},
