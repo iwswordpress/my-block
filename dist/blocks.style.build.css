@@ -1,1 +1,32 @@
-.wp-block-cgb-block-my-block{background:#2196f3;border:0.2rem solid #292929;color:#292929;margin:0 auto;max-width:740px;padding:2rem}
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-cgb-block-my-block {
+  background: rgba(232, 227, 227, 0.424);
+  border: 3px solid orangered;
+  border-radius: 10px;
+  color: #292929;
+  margin: 0 auto;
+  max-width: 740px;
+  padding: 2rem; }
+
+.content {
+  color: #2196f3;
+  background: #ffa500; }
+
+.gutenberg-examples-align-right {
+  text-align: right; }
+
+.gutenberg-examples-align-left {
+  text-align: left; }
+
+.gutenberg-examples-align-center {
+  text-align: center; }
