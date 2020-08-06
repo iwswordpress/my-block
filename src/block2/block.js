@@ -1,5 +1,5 @@
 /**
- * BLOCK: my-block
+ * BLOCK: my-block2
  * BASE BUILD
  * Registering a basic block with Gutenberg.
  * Simple block, renders and saves the same content without any interactivity.
