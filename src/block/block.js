@@ -89,28 +89,30 @@ registerBlockType("cgb/block-my-block", {
 							],
 						]}
 					/>
-					<Toolbar>
-						<DropdownMenu
-							controls={[
-								[
-									{
-										icon: "twitter",
-										title: __("TWITTER", "mytheme-blocks"),
-										onClick: () => alert(true),
-										isActive: false,
-									},
-								],
-								[
-									{
-										icon: "facebook",
-										title: __("FACEBOOK", "mytheme-blocks"),
-										onClick: () => alert("ADMIN"),
-										isActive: false,
-									},
-								],
-							]}
-						/>
-					</Toolbar>
+					{content && content.length > 0 && (
+						<Toolbar>
+							<DropdownMenu
+								controls={[
+									[
+										{
+											icon: "twitter",
+											title: __("TWITTER", "mytheme-blocks"),
+											onClick: () => alert(true),
+											isActive: false,
+										},
+									],
+									[
+										{
+											icon: "facebook",
+											title: __("FACEBOOK", "mytheme-blocks"),
+											onClick: () => alert("ADMIN"),
+											isActive: false,
+										},
+									],
+								]}
+							/>
+						</Toolbar>
+					)}
 					<AlignmentToolbar value={alignment} onChange={onChangeAlignment} />
 				</BlockControls>
 				<RichText
