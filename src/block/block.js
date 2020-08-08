@@ -123,10 +123,10 @@ registerBlockType("cgb/block-my-block", {
 						]}
 					/>
 					<PanelBody title={__("<h1>SECTION ONE</h1>", "mytheme-blocks")}>
-						{/* <ColorPalette
+						<ColorPalette
 							colors={[{ color: "#f03" }, { color: "blue" }]}
 							onChange={onChangeBackgroundColor}
-						/>{" "} */}
+						/>{" "}
 						<ToggleControl
 							label="TOGGLE CONTROL"
 							onChange={(v) => {
