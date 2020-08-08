@@ -1,0 +1,28 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.wp-block-cgb-block-my-block {
+	background: hsla(0, 8%, 90%, 0.424);
+	border: 3px solid $red;
+	border-radius: 10px;
+	color: $black;
+	margin: 0 auto;
+	max-width: 740px;
+	padding: 2rem;
+}
+.content {
+	color: #2196f3;
+	background: #ffa500;
+}
+.gutenberg-examples-align-right {
+	text-align: right;
+}
+.gutenberg-examples-align-left {
+	text-align: left;
+}
+.gutenberg-examples-align-center {
+	text-align: center;
+}
