@@ -94,16 +94,6 @@ registerBlockType("cgb/block-my-block", {
 			setAttributes({ textColor });
 		};
 
-		// if (!categories) {
-		// 	wp.apiFetch({
-		// 		url: "http://localhost/firsttheme/wp-json/wp/v2/posts",
-		// 	}).then((categories) => {
-		// 		console.log(categories);
-		// 		console.log(categories[1].title.rendered);
-		// 	});
-		// }
-		// console.log("CATEGORIES: ", categories);
-
 		return (
 			<Fragment>
 				<InspectorControls>
@@ -145,16 +135,16 @@ registerBlockType("cgb/block-my-block", {
 					controls={[
 						[
 							{
-								icon: "editor-alignright",
-								title: __("JS TEST", "mytheme-blocks"),
+								icon: "admin-settings",
+								title: __("ALIGN RIGHT", "mytheme-blocks"),
 								onClick: () => onChangeAlignment("right"),
 								isActive: false,
 							},
 						],
 						[
 							{
-								icon: "admin-generic",
-								title: __("ADMIN", "mytheme-blocks"),
+								icon: "warning",
+								title: __("ALERT", "mytheme-blocks"),
 								onClick: () => alert("ADMIN"),
 								isActive: false,
 							},
@@ -167,7 +157,7 @@ registerBlockType("cgb/block-my-block", {
 							[
 								{
 									icon: "admin-post",
-									title: __("POST", "mytheme-blocks"),
+									title: __("ADMIN POST", "mytheme-blocks"),
 									onClick: () => alert(true),
 									isActive: false,
 								},
@@ -175,7 +165,7 @@ registerBlockType("cgb/block-my-block", {
 							[
 								{
 									icon: "admin-tools",
-									title: __("TOOLS", "mytheme-blocks"),
+									title: __("ADMIN TOOLS", "mytheme-blocks"),
 									onClick: () => alert("ADMIN"),
 									isActive: false,
 								},
@@ -237,7 +227,6 @@ registerBlockType("cgb/block-my-block", {
 					backgroundColor: backgroundColor,
 					color: textColor,
 				}}
-				// className={`gutenberg-examples-align-${alignment}`}
 			/>
 		);
 	},

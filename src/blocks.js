@@ -10,4 +10,4 @@
  */
 
 import "./block/block.js";
-import "./block2/block.js";
+import "./cw-rest/rest.js";

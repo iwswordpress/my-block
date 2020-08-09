@@ -12,9 +12,9 @@ import "./style.scss";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 
-registerBlockType("cgb/block-my-block2", {
+registerBlockType("cw/rest-api", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __("CRAIG - SECOND"), // Block title.
+	title: __("CW REST API"), // Block title.
 	icon: (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ registerBlockType("cgb/block-my-block2", {
 		</svg>
 	), // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: "common", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
-	keywords: [__("CW my-block2"), __("CGB Example"), __("create-guten-block")],
+	keywords: [__("CW rest"), __("CW resT API"), __("create-guten-block")],
 	attributes: {
 		categories: {
 			type: "object",
