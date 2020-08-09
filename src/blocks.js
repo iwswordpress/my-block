@@ -11,4 +11,4 @@
 
 import "./block/block.js";
 import "./cw-rest/rest.js";
-import "./ali/block.js";
+import "./ali/richtext.js";

@@ -27,6 +27,21 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
+
+function mytheme_blocks_categories( $categories, $post ){
+    return array_merge(
+        $categories, 
+        array(
+            array(
+                'slug' => 'mytheme-category',
+                'title'=> __('My Theme Category', 'mytheme-blocks'),
+                'icon' => 'welcome-learn-more'
+            )
+        )
+            );
+}
+add_filter('block_categories','mytheme_blocks_categories',10,2);
+
 function my_block_cgb_block_assets() { // phpcs:ignore
 	// Register block styles for both frontend + backend.
 	wp_register_style(
