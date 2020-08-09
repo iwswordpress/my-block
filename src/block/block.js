@@ -44,6 +44,21 @@ registerBlockType("cgb/block-my-block", {
 	), // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: "common", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [__("CW my-block"), __("CGB Example"), __("create-guten-block")],
+	styles: [
+		{
+			name: "rounded",
+			label: __("Rounded", "mytheme-blocks"),
+			usDefault: true,
+		},
+		{
+			name: "outline",
+			label: __("Outline", "mytheme-blocks"),
+		},
+		{
+			name: "squared",
+			label: __("Squared", "mytheme-blocks"),
+		},
+	],
 	attributes: {
 		content: {
 			type: "string",

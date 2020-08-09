@@ -13,16 +13,17 @@
 	max-width: 740px;
 	padding: 2rem;
 }
-.content {
-	color: #2196f3;
-	background: #ffa500;
-}
-.gutenberg-examples-align-right {
-	text-align: right;
-}
-.gutenberg-examples-align-left {
-	text-align: left;
-}
-.gutenberg-examples-align-center {
-	text-align: center;
+.wp-block-mytheme-blocks-secondblock {
+	background-color: #524d5b;
+	color: #fff;
+	border-radius: 5px;
+	padding: 20px;
+	&.is-style-squared {
+		border-radius: 30px;
+		color: green;
+	}
+	&.is-style-outline {
+		border-radius: 0px;
+		border: 2px solid currentColor;
+	}
 }
