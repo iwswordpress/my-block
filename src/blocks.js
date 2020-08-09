@@ -12,3 +12,4 @@
 import "./block/block.js";
 import "./cw-rest/rest.js";
 import "./ali/richtext.js";
+import "./nested/nested.js";

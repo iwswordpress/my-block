@@ -22,7 +22,7 @@ const {
 const { Fragment } = wp.element;
 
 registerBlockType("ali/second-block", {
-	title: __("Second Block", "mytheme-blocks"),
+	title: __("ALI Second Block", "mytheme-blocks"),
 	description: __("Our second block", "mytheme-blocks"),
 	category: "mytheme-category",
 	icon: (
