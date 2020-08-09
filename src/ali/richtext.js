@@ -8,7 +8,7 @@
 //  Import CSS.
 import "./editor.scss";
 import "./style.scss";
-
+import Edit from "./edit";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const {
@@ -75,62 +75,8 @@ registerBlockType("ali/second-block", {
 		},
 	},
 
-	edit: ({ className, attributes, setAttributes }) => {
-		//console.log(attributes);
-		const { content, alignment, backgroundColor, textColor } = attributes;
-		const onChangeContent = (content) => {
-			setAttributes({ content });
-		};
+	edit: Edit,
 
-		const onChangeAlignment = (alignment) => {
-			setAttributes({ alignment });
-		};
-
-		const onChangeBackgroundColor = (backgroundColor) => {
-			setAttributes({ backgroundColor });
-		};
-
-		const onChangeTextColor = (textColor) => {
-			setAttributes({ textColor });
-		};
-
-		return (
-			<Fragment>
-				<InspectorControls>
-					<PanelColorSettings
-						title={__("Panel", "mytheme-blocks")}
-						colorSettings={[
-							{
-								value: backgroundColor,
-								onChange: onChangeBackgroundColor,
-								label: __("Backgorund Colour", "mytheme-blocks"),
-							},
-							{
-								value: textColor,
-								onChange: onChangeTextColor,
-								label: __("Text Colour", "mytheme-blocks"),
-							},
-						]}
-					/>
-				</InspectorControls>
-				<BlockControls>
-					<AlignmentToolbar value={alignment} onChange={onChangeAlignment} />
-				</BlockControls>
-				<RichText
-					tagName="p"
-					className={className}
-					onChange={onChangeContent}
-					value={content}
-					formattingControls={["bold"]}
-					style={{
-						textAlign: alignment,
-						backgroundColor: backgroundColor,
-						color: textColor,
-					}}
-				/>
-			</Fragment>
-		);
-	},
 	save: ({ attributes }) => {
 		const { content, alignment, backgroundColor, textColor } = attributes;
 		return (
