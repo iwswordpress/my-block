@@ -33,7 +33,7 @@ registerBlockType("cw/nested", {
 	title: __("NESTED"), // Block title.
 	icon: "admin-network", // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: "mytheme-category", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
-	keywords: [__("CW my-block"), __("CGB Example"), __("create-guten-block")],
+	keywords: [__("NESTED"), __("CGB Example"), __("create-guten-block")],
 	styles: [
 		{
 			name: "rounded",
