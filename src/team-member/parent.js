@@ -2,8 +2,14 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { RichText } = wp.blockEditor; // Import RichText()) from wp.blockEditor
 
-const { InnerBlocks } = wp.editor;
-
+const { InnerBlocks, InspectorControls } = wp.editor;
+const { PanelBody, RangeControl } = wp.components;
+const attributes = {
+	columns: {
+		type: "number",
+		default: 2,
+	},
+};
 registerBlockType("mytheme-blocks/team-members", {
 	title: __("Team Members", "mytheme-blocks"),
 
@@ -18,28 +24,49 @@ registerBlockType("mytheme-blocks/team-members", {
 		__("member", "mytheme-blocks"),
 		__("person", "mytheme-blocks"),
 	],
+	attributes: {
+		columns: {
+			type: "number",
+			default: 2,
+		},
+	},
 
-	edit({ className }) {
+	edit({ className, attributes, setAttributes }) {
+		const { columns } = attributes;
 		return (
 			<div
-				className={className}
-				style={{ border: "3px dashed red", padding: "20px" }}
+				className={`${className} has-${columns}-columns`}
+				style={{ border: "2px solid  red", padding: "20px" }}
 			>
+				<InspectorControls>
+					<PanelBody>
+						<RangeControl
+							label={__("column", "mytheme-blocks")}
+							value={columns}
+							onChange={(columns) => setAttributes({ columns })}
+							min={1}
+							max={6}
+						/>
+					</PanelBody>
+				</InspectorControls>
 				<InnerBlocks
 					allowedBlocks={["mytheme-blocks/team-member"]}
 					template={[
 						["mytheme-blocks/team-member"],
 						["mytheme-blocks/team-member"],
 					]}
-					// templateLock="all"
 				/>
 			</div>
 		);
 	},
 
-	save() {
+	save({ attributes }) {
+		const { columns } = attributes;
 		return (
-			<div style={{ border: "3px dashed red", padding: "20px" }}>
+			<div
+				className={`has-${columns}-columns`}
+				style={{ border: "3px dashed red", padding: "20px" }}
+			>
 				<InnerBlocks.Content />
 			</div>
 		);
