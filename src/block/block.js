@@ -223,7 +223,7 @@ registerBlockType("cgb/block-my-block", {
 						backgroundColor: backgroundColor,
 						color: textColor,
 					}}
-					placeholder="add your text here..."
+					placeholder="add your NEW text here..."
 					// formattingControls={["bold", "italic"]}
 				/>
 			</Fragment>

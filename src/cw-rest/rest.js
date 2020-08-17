@@ -56,12 +56,12 @@ registerBlockType("cw/rest-api", {
 		getData();
 
 		console.log("CATEGORIES: ", categories);
-		return <div>THE TITLE IS: {title}</div>;
+		return <div>THE NEW TITLE IS: {title}</div>;
 	},
 
 	save: ({ attributes }) => {
 		const { title } = attributes;
 
-		return <div>THE TITLE IS: {title}</div>;
+		return <div>THE NEW TITLE IS: {title}</div>;
 	},
 });
