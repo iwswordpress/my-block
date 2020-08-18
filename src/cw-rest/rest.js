@@ -12,9 +12,9 @@ import "./style.scss";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 
-registerBlockType("cgb/block-my-block2", {
+registerBlockType("cw/rest-api", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __("CRAIG - SECOND"), // Block title.
+	title: __("CW REST API"), // Block title.
 	icon: (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +26,8 @@ registerBlockType("cgb/block-my-block2", {
 			<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
 		</svg>
 	), // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-	category: "common", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
-	keywords: [__("CW my-block2"), __("CGB Example"), __("create-guten-block")],
+	category: "mytheme-category", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+	keywords: [__("CW rest"), __("CW resT API"), __("create-guten-block")],
 	attributes: {
 		categories: {
 			type: "object",
@@ -56,12 +56,12 @@ registerBlockType("cgb/block-my-block2", {
 		getData();
 
 		console.log("CATEGORIES: ", categories);
-		return <div>THE TITLE IS: {title}</div>;
+		return <div>THE NEW TITLE IS: {title}</div>;
 	},
 
 	save: ({ attributes }) => {
 		const { title } = attributes;
 
-		return <div>THE TITLE IS: {title}</div>;
+		return <div>THE NEW TITLE IS: {title}</div>;
 	},
 });

@@ -18,18 +18,22 @@
   max-width: 740px;
   padding: 2rem; }
 
-.content {
-  color: #2196f3;
-  background: #ffa500; }
+.wp-block-mytheme-blocks-secondblock {
+  background-color: #524d5b;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px; }
 
-.gutenberg-examples-align-right {
-  text-align: right; }
+.is-style-squared {
+  border-radius: 30px;
+  color: green;
+  border: 10px solid red;
+  border-radius: 20px; }
 
-.gutenberg-examples-align-left {
-  text-align: left; }
-
-.gutenberg-examples-align-center {
-  text-align: center; }
+.is-style-rounded {
+  border-radius: 30px;
+  color: green;
+  border: 3px solid green; }
 /**
  * #.# Common SCSS
  *
@@ -62,3 +66,59 @@
 
 .gutenberg-examples-align-center {
   text-align: center; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.is-style-squared {
+  border-radius: 0px;
+  padding: 30px; }
+
+.is-style-outline {
+  border-radius: 30px;
+  border: 2px solid currentColor;
+  padding: 30px; }
+
+.is-style-all {
+  border-radius: 30px;
+  border: 10px solid orange;
+  padding: 30px;
+  background: #ccc; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-cgb-block-my-block {
+  background: rgba(232, 227, 227, 0.424);
+  border: 3px solid orangered;
+  border-radius: 10px;
+  color: #292929;
+  margin: 0 auto;
+  max-width: 740px;
+  padding: 2rem; }
+
+.wp-block-mytheme-blocks-secondblock {
+  background-color: #524d5b;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px; }
+
+.is-style-squared {
+  border-radius: 30px;
+  color: green;
+  border: 10px solid red;
+  border-radius: 20px; }
+
+.is-style-rounded {
+  border-radius: 30px;
+  color: green;
+  border: 3px solid green; }

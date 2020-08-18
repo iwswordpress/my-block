@@ -10,4 +10,8 @@
  */
 
 import "./block/block.js";
-import "./block2/block.js";
+import "./cw-rest/rest.js";
+import "./ali/richtext.js";
+import "./nested/nested.js";
+import "./team-member/index.js";
+import "./team-member/parent.js";

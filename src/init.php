@@ -27,6 +27,21 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
+
+function mytheme_blocks_categories( $categories, $post ){
+    return array_merge(
+        $categories, 
+        array(
+            array(
+                'slug' => 'mytheme-category',
+                'title'=> __('My Theme Category', 'mytheme-blocks'),
+                'icon' => 'welcome-learn-more'
+            )
+        )
+            );
+}
+add_filter('block_categories','mytheme_blocks_categories',10,2);
+
 function my_block_cgb_block_assets() { // phpcs:ignore
 	// Register block styles for both frontend + backend.
 	wp_register_style(
@@ -40,7 +55,7 @@ function my_block_cgb_block_assets() { // phpcs:ignore
 	wp_register_script(
 		'my_block-cgb-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-api-fetch' ), // Dependencies, defined above.
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-api-fetch', 'wp-editor' ), // Dependencies, defined above.
 		//null,  
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
 		true // Enqueue the script in the footer.
