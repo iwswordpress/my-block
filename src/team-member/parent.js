@@ -16,6 +16,9 @@ registerBlockType("mytheme-blocks/team-members", {
 	description: __("Block showing a Team Members.", "mytheme-blocks"),
 
 	icon: "grid-view",
+	supports: {
+		html: false,
+	},
 
 	category: "mytheme-category",
 
@@ -34,10 +37,7 @@ registerBlockType("mytheme-blocks/team-members", {
 	edit({ className, attributes, setAttributes }) {
 		const { columns } = attributes;
 		return (
-			<div
-				className={`${className} has-${columns}-columns`}
-				style={{ border: "2px solid  red", padding: "20px" }}
-			>
+			<div style={{ border: "3px dashed red", padding: "20px" }}>
 				<InspectorControls>
 					<PanelBody>
 						<RangeControl
@@ -63,10 +63,7 @@ registerBlockType("mytheme-blocks/team-members", {
 	save({ attributes }) {
 		const { columns } = attributes;
 		return (
-			<div
-				className={`has-${columns}-columns`}
-				style={{ border: "3px dashed red", padding: "20px" }}
-			>
+			<div style={{ border: "3px dashed red", padding: "20px" }}>
 				<InnerBlocks.Content />
 			</div>
 		);

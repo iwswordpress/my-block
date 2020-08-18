@@ -27,6 +27,10 @@ registerBlockType("mytheme-blocks/team-member", {
 	parent: ["mytheme-blocks/team-members"],
 
 	category: "mytheme-category",
+	supports: {
+		reusable: false,
+		html: false,
+	},
 
 	keywords: [
 		__("team", "mytheme-blocks"),
