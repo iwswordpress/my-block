@@ -1,5 +1,5 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
-const { RichText } = wp.blockEditor;
+const { RichText, MediaPlaceholder } = wp.blockEditor;
 const { Component } = wp.element;
 
 class TeamMemberEdit extends Component {

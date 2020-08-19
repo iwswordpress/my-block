@@ -15,3 +15,4 @@ import "./ali/richtext.js";
 import "./nested/nested.js";
 import "./team-member/index.js";
 import "./team-member/parent.js";
+import "./latest-posts/index.js";
